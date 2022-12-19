@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-primary;
+    }
+}
+
+@layer components {
+    .container {
+        @apply w-[90%] max-w-[1500px] mx-auto;
+    }
+    .products {
+        @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 md:gap-5 mb-5 md:mb-12;
+    }
+    .card {
+        @apply bg-gray p-5 text-center;
+    }
+    .card__img {
+        @apply w-2/3 mx-auto;
+    }
+    .card__info {
+        @apply mb-2;
+    }
+}
