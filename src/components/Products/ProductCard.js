@@ -1,4 +1,3 @@
-import React, { useReducer } from "react";
 import Button from "./Button";
 
 const ProductCard = (props) => {
