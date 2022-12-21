@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const AppContext = React.createContext({
     cart: [],
+    cartTotal: 0,
     view: "home",
     onUpdateQuantity: (id) => {},
     onChangeView: (selectedView) => {},
@@ -11,6 +12,15 @@ const AppContext = React.createContext({
 export const AppContextProvider = (props) => {
     const [view, setView] = useState("home");
     const [addedProducts, setAddedProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        let total = 0;
+        addedProducts.forEach((product) => {
+            total += product.quantity * product.price;
+        });
+        setTotal(total);
+    }, [addedProducts]);
 
     const changeViewHandler = (selectedView) => {
         setView(selectedView);
@@ -70,6 +80,7 @@ export const AppContextProvider = (props) => {
             value={{
                 cart: addedProducts,
                 view: view,
+                cartTotal: total,
                 onChangeView: changeViewHandler,
                 onAddToCart: addToCartHandler,
                 onUpdateQuantity: quantityHandler,

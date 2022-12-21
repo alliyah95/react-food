@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../../store/app-context";
 import Button from "../Button";
 
 const OrderSummary = () => {
     const appContext = useContext(AppContext);
+    const [total, setTotal] = useState(appContext.cartTotal);
 
-    let total = 0;
-    for (let product of appContext.cart) {
-        total += product.quantity * product.price;
-    }
+    useEffect(() => {
+        setTotal(appContext.cartTotal);
+    }, [appContext.cartTotal]);
 
     const orderHandler = () => {
         alert("Order successfully placed!");
