@@ -6,7 +6,7 @@ const ProductList = (props) => {
     };
 
     return (
-        <div className="products">
+        <div className="products  animate__animated animate__fadeIn">
             {props.products.map((product) => {
                 return (
                     <ProductCard

@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../Button";
 
 const ProductCard = (props) => {
     const handleAddToCart = () => {
@@ -20,7 +20,7 @@ const ProductCard = (props) => {
                 </h3>
                 <p className="text-sm md:text-md">${props.price}</p>
             </div>
-            <Button onclick={handleAddToCart} />
+            <Button onclick={handleAddToCart}>Add to bag</Button>
         </div>
     );
 };
