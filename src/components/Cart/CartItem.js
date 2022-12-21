@@ -21,7 +21,9 @@ const CartItem = (props) => {
         <div className="cart-item flex bg-gray p-3 justify-between">
             <div className="item-info flex items-center space-x-2">
                 <img
-                    src={require("./img/bibimbap.png")}
+                    src={require(`../images/${props.name
+                        .replaceAll(" ", "-")
+                        .toLowerCase()}.png`)}
                     alt="Bibimbap"
                     className="w-1/4 md:w-1/6 block"
                 />

@@ -9,7 +9,9 @@ const ProductCard = (props) => {
         <div className="card">
             <div className="card__img">
                 <img
-                    src={require("./img/bibimbap.png")}
+                    src={require(`../images/${props.name
+                        .replaceAll(" ", "-")
+                        .toLowerCase()}.png`)}
                     alt="Bibimbap"
                     className="product-img"
                 />
