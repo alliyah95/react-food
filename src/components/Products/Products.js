@@ -10,11 +10,12 @@ import AppContext from "../../store/app-context";
  * by calling the onAddToCart property of appContext
  */
 
-const Products = () => {
+const Products = (props) => {
     const appContext = useContext(AppContext);
 
     const addToCartHandler = (id, name, price) => {
         appContext.onAddToCart(id, name, price);
+        props.onAdd(name);
     };
 
     return <ProductList products={products} onAddToCart={addToCartHandler} />;
