@@ -12,7 +12,7 @@ const ProductCard = (props) => {
                     src={require(`../images/${props.name
                         .replaceAll(" ", "-")
                         .toLowerCase()}.png`)}
-                    alt="Bibimbap"
+                    alt={props.name}
                     className="product-img"
                 />
             </div>

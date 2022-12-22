@@ -24,7 +24,7 @@ const CartItem = (props) => {
                     src={require(`../images/${props.name
                         .replaceAll(" ", "-")
                         .toLowerCase()}.png`)}
-                    alt="Bibimbap"
+                    alt={props.name}
                     className="w-1/4 md:w-1/6 block"
                 />
                 <div className="item-details w-3/4 md:w-5/6">
