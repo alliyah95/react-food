@@ -6,7 +6,7 @@ const CartItems = () => {
     const appContext = useContext(AppContext);
 
     return (
-        <div className="cart-items md:w-3/5 lg:w-2/5 space-y-5">
+        <div className="md:w-3/5 lg:w-2/5 space-y-5">
             {appContext.cart.map((product) => {
                 return (
                     product.quantity > 0 && (

@@ -18,8 +18,8 @@ const CartItem = (props) => {
     };
 
     return (
-        <div className="cart-item flex bg-gray p-3 justify-between">
-            <div className="item-info flex items-center space-x-2">
+        <div className="flex bg-gray p-3 justify-between">
+            <div className=" flex items-center space-x-2">
                 <img
                     src={require(`../images/${props.name
                         .replaceAll(" ", "-")
@@ -27,12 +27,12 @@ const CartItem = (props) => {
                     alt={props.name}
                     className="w-1/4 md:w-1/6 block"
                 />
-                <div className="item-details w-3/4 md:w-5/6">
+                <div className="w-3/4 md:w-5/6">
                     <p>{props.name}</p>
                     <p>${props.price}</p>
                 </div>
             </div>
-            <div className="flex item-quantity items-center justify-center space-x-5 p-3">
+            <div className="flex items-center justify-center space-x-5 p-3">
                 <CartItemButton onclick={() => updateQuantity("decrement")}>
                     -
                 </CartItemButton>

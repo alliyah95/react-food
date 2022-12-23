@@ -16,7 +16,7 @@ const OrderSummary = () => {
 
     if (appContext.cart.length > 0 && total > 0) {
         return (
-            <div className="flex flex-col self-start order-summary bg-gray md:w-2/5 lg:w-3/5 p-5">
+            <div className="flex flex-col self-start bg-gray md:w-2/5 lg:w-3/5 p-5">
                 <h3 className="text-xl font-bold mb-2">Order Summary</h3>
                 <p className="font-bold">Selected items:</p>
                 <ul className="space-y-2 mb-3">
