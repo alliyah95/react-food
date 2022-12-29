@@ -1,17 +1,29 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import ProductList from "./ProductList";
-import products from "./dummy-products.js";
 import AppContext from "../../store/app-context";
-
-/**
- * This component passes the dummy products to ProductList
- * Additionally, it is also involved in updating the user's cart
- * Every time a product is added to the cart, the cart object in AppContext is also updated
- * by calling the onAddToCart property of appContext
- */
 
 const Products = (props) => {
     const appContext = useContext(AppContext);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchMeals = async () => {
+            const response = await fetch(
+                "https://react-food-b230d-default-rtdb.firebaseio.com/meals.json"
+            );
+            const data = await response.json();
+            const loadedProducts = [];
+            for (const key in data) {
+                loadedProducts.push({
+                    id: data[key].id,
+                    name: data[key].name,
+                    price: data[key].price,
+                });
+            }
+            setProducts(loadedProducts);
+        };
+        fetchMeals();
+    }, []);
 
     const addToCartHandler = (id, name, price) => {
         appContext.onAddToCart(id, name, price);
