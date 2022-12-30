@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 const AppContext = React.createContext({
     cart: [],
     cartTotal: 0,
-    view: "home",
+    view: "",
     onUpdateQuantity: (id) => {},
     onChangeView: (selectedView) => {},
     onAddToCart: (product) => {},
 });
 
 export const AppContextProvider = (props) => {
-    const [view, setView] = useState("home");
+    const [view, setView] = useState("checkout");
     const [addedProducts, setAddedProducts] = useState([]);
     const [total, setTotal] = useState(0);
 

@@ -6,6 +6,15 @@
     body {
         @apply text-primary;
     }
+    label {
+        @apply block;
+    }
+    input {
+        @apply px-3 py-2 w-full border border-gray bg-gray focus:ring-secondary focus:border-secondary;
+    }
+    form {
+        @apply space-y-2;
+    }
 }
 
 @layer components {
@@ -23,5 +32,8 @@
     }
     .card__info {
         @apply mb-2;
+    }
+    .form-group {
+        @apply block;
     }
 }

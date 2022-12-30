@@ -11,7 +11,7 @@ const OrderSummary = () => {
     }, [appContext.cartTotal]);
 
     const orderHandler = () => {
-        alert("Order successfully placed!");
+        appContext.onChangeView("checkout");
     };
 
     if (appContext.cart.length > 0 && total > 0) {
