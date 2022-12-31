@@ -1,10 +1,10 @@
 import React, { useContext, useReducer } from "react";
-import AppContext from "../../store/app-context";
 
 const ACTIONS = {
     VALIDATE_NAME: "name",
     VALIDATE_ADDRESS: "address",
     VALIDATE_EMAIL: "email",
+    RESET_FORM: "reset",
 };
 
 const inputReducer = (inputState, action) => {
@@ -38,10 +38,22 @@ const inputReducer = (inputState, action) => {
                     action.payload.emailTouched &&
                     action.payload.content.includes("@"),
             };
+        case ACTIONS.RESET_FORM:
+            return {
+                name: "",
+                nameTouched: false,
+                validName: false,
+                address: "",
+                addressTouched: false,
+                validAddress: false,
+                email: "",
+                emailTouched: false,
+                validEmail: false,
+            };
     }
 };
 
-const OrderForm = () => {
+const OrderForm = (props) => {
     const [inputState, dispatchInput] = useReducer(inputReducer, {
         name: "",
         nameTouched: false,
@@ -53,8 +65,6 @@ const OrderForm = () => {
         emailTouched: false,
         validEmail: false,
     });
-
-    const appContext = useContext(AppContext);
 
     const nameHandler = (evt) => {
         dispatchInput({
@@ -86,13 +96,25 @@ const OrderForm = () => {
         });
     };
 
-    const orderHandler = () => {};
+    const orderHandler = (evt) => {
+        evt.preventDefault();
+        props.onPlaceOrder({
+            name: inputState.name,
+            address: inputState.address,
+            email: inputState.email,
+        });
+        dispatchInput({ type: ACTIONS.RESET_FORM });
+    };
 
     return (
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={orderHandler}>
             <div>
                 <label htmlFor="name">Name</label>
-                <input id="name" onChange={nameHandler} />
+                <input
+                    id="name"
+                    onChange={nameHandler}
+                    value={inputState.name}
+                />
                 {!inputState.validName && inputState.nameTouched && (
                     <p className="text-sm text-tertiary ">
                         Name can't be empty
@@ -101,7 +123,11 @@ const OrderForm = () => {
             </div>
             <div>
                 <label htmlFor="address">Address</label>
-                <input id="name" onChange={addressHandler} />
+                <input
+                    id="name"
+                    onChange={addressHandler}
+                    value={inputState.address}
+                />
                 {!inputState.validAddress && inputState.addressTouched && (
                     <p className="text-sm text-tertiary ">
                         Address can't be empty
@@ -110,7 +136,12 @@ const OrderForm = () => {
             </div>
             <div>
                 <label htmlFor="email">Email address</label>
-                <input id="email" onChange={emailHandler} type="email" />
+                <input
+                    id="email"
+                    onChange={emailHandler}
+                    type="email"
+                    value={inputState.email}
+                />
                 {!inputState.validEmail && inputState.emailTouched && (
                     <p className="text-sm text-tertiary ">
                         Invalid email address

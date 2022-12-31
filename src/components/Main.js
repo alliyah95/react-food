@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import Products from "./Products/Products";
 import Cart from "./Cart/Cart";
 import AppContext from "../store/app-context";
-import OrderForm from "./Order/OrderForm";
+import Order from "./Order/Order";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Main = () => {
     const appContext = useContext(AppContext);
-    console.log(appContext.view);
     const notify = (name) => toast(`${name} added to bag!`);
 
     return (
@@ -19,7 +18,7 @@ const Main = () => {
             </h3>
             {appContext.view === "home" && <Products onAdd={notify} />}
             {appContext.view === "cart" && <Cart />}
-            {appContext.view === "checkout" && <OrderForm />}
+            {appContext.view === "checkout" && <Order />}
             <ToastContainer
                 position="top-right"
                 autoClose={2000}
