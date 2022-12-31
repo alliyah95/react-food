@@ -55,15 +55,15 @@ export const AppContextProvider = (props) => {
         }
     };
 
-    const quantityHandler = (id, type) => {
+    const quantityHandler = (id, type, qty = 1) => {
         const updatedProducts = addedProducts.map((product) => {
             if (product.id === id) {
                 switch (type) {
                     case "increment":
-                        product.quantity += 1;
+                        product.quantity += qty;
                         break;
                     case "decrement":
-                        product.quantity -= 1;
+                        product.quantity -= qty;
                         break;
                     default:
                         product.quantity += 0;

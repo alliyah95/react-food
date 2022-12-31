@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 const Main = () => {
     const appContext = useContext(AppContext);
     const notify = (name) => toast(`${name} added to bag!`);
+    const showSuccessOrder = () =>
+        toast("Yay! Your order has been successfully placed.");
 
     return (
         <div className="container min-h-screen">
@@ -18,7 +20,9 @@ const Main = () => {
             </h3>
             {appContext.view === "home" && <Products onAdd={notify} />}
             {appContext.view === "cart" && <Cart />}
-            {appContext.view === "checkout" && <Order />}
+            {appContext.view === "checkout" && (
+                <Order onOrder={showSuccessOrder} />
+            )}
             <ToastContainer
                 position="top-right"
                 autoClose={2000}
