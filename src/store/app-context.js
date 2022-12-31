@@ -10,7 +10,7 @@ const AppContext = React.createContext({
 });
 
 export const AppContextProvider = (props) => {
-    const [view, setView] = useState("checkout");
+    const [view, setView] = useState("home");
     const [addedProducts, setAddedProducts] = useState([]);
     const [total, setTotal] = useState(0);
 
