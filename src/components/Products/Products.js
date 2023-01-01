@@ -39,10 +39,19 @@ const Products = (props) => {
         props.onAdd(name);
     };
 
-    if (error) {
-        return <p className="text-tertiary">{error}</p>;
+    let content = (
+        <p className="animate-bounce text-tertiary">Fetching meals...</p>
+    );
+
+    if (products.length > 0) {
+        content = products;
     }
-    return <ProductList products={products} onAddToCart={addToCartHandler} />;
+
+    if (error) {
+        content = <p className="text-tertiary">{error}</p>;
+    }
+
+    return <ProductList products={content} onAddToCart={addToCartHandler} />;
 };
 
 export default Products;
