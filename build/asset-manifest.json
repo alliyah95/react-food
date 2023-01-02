@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-food/static/css/main.b0e2e621.css",
+    "main.js": "/react-food/static/js/main.5d0c6a73.js",
+    "static/media/paella.png": "/react-food/static/media/paella.6e95d34870be51bc674a.png",
+    "static/media/bibimbap.png": "/react-food/static/media/bibimbap.bc065037518ea11f3d75.png",
+    "static/media/ratatouille.png": "/react-food/static/media/ratatouille.b55e677def98703a77bc.png",
+    "static/media/pizza.png": "/react-food/static/media/pizza.51f0f6c9c8818b9d07ba.png",
+    "static/media/kimchi.png": "/react-food/static/media/kimchi.b7b84cb472529c682409.png",
+    "static/media/nasi-goreng.png": "/react-food/static/media/nasi-goreng.10a165b00cf467cc3ccb.png",
+    "static/media/goulash.png": "/react-food/static/media/goulash.4cccabdac5d58d3d3047.png",
+    "static/media/lasagna.png": "/react-food/static/media/lasagna.04781be8dd7db0b5ee70.png",
+    "static/media/borscht.png": "/react-food/static/media/borscht.e2d3e5307b07443852eb.png",
+    "static/media/clam-chowder.png": "/react-food/static/media/clam-chowder.5998b3a1a0e35270fd76.png",
+    "static/media/curry.png": "/react-food/static/media/curry.c5c7fb397b23a86205e0.png",
+    "static/media/sushi.png": "/react-food/static/media/sushi.aa0ac4bc9e55a4705110.png",
+    "static/media/masala-dosa.png": "/react-food/static/media/masala-dosa.9bcaae7d97d046095946.png",
+    "index.html": "/react-food/index.html",
+    "main.b0e2e621.css.map": "/react-food/static/css/main.b0e2e621.css.map",
+    "main.5d0c6a73.js.map": "/react-food/static/js/main.5d0c6a73.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0e2e621.css",
+    "static/js/main.5d0c6a73.js"
+  ]
+}
