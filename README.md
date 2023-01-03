@@ -2,13 +2,13 @@
 
 This was a project I made for [Maximilian Schwarzmüller's React course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/). It covers the following topics:
 
-- Basic hooks 
-  - `useState`
-  - `useEffect`
-  - `useReducer`
-  - `useContext`
-- Error handling
-- Sending HTTP requests
+-   Basic hooks
+    -   `useState`
+    -   `useEffect`
+    -   `useReducer`
+    -   `useContext`
+-   Error handling
+-   Sending HTTP requests
 
 <br>
 
