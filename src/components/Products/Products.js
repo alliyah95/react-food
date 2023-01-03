@@ -10,7 +10,7 @@ const Products = (props) => {
     useEffect(() => {
         const fetchMeals = async () => {
             const response = await fetch(
-                "https://react-food-b230d-default-rtdb.firebaseio.com/meals.json"
+                process.env.REACT_APP_FIREBASE_RETRIEVE_URL
             );
 
             if (!response.ok) {

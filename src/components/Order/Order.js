@@ -6,22 +6,19 @@ const Order = (props) => {
     const appContext = useContext(AppContext);
 
     const submitOrder = async ({ name, address, email }) => {
-        const response = await fetch(
-            "https://react-food-b230d-default-rtdb.firebaseio.com/orders.json",
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    name,
-                    address,
-                    email,
-                    orders: appContext.cart,
-                    total: appContext.cartTotal,
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        );
+        const response = await fetch(process.env.REACT_APP_FIREBASE_POST_URL, {
+            method: "POST",
+            body: JSON.stringify({
+                name,
+                address,
+                email,
+                orders: appContext.cart,
+                total: appContext.cartTotal,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
         const data = await response.json();
 
         // update meal quantity on cart
